@@ -1,9 +1,9 @@
 import Card from '../Card/Card'
 import SectionHeading from './SectionHeading/SectionHeading'
-import Jeans from '../../img/jeans.jpg'
-import Shirts from '../../img/shirts.jpg'
-import Tshirts from '../../img/tshirts.jpeg'
-import Dresses from '../../img/dresses.jpg'
+import Jeans from '../../assets/img/jeans.jpg'
+import Shirts from '../../assets/img/shirts.jpg'
+import Tshirts from '../../assets/img/tshirts.jpeg'
+import Dresses from '../../assets/img/dresses.jpg'
 
 const items = [
   {
