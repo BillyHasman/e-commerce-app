@@ -1,8 +1,8 @@
-import './App.css'
+import './Shop.css'
 import Navigation from './assets/components/Navigation/Navigation'
 import HeroSection from './assets/components/HeroSection/HeroSection'
 
-const App = () => {
+const Shop = () => {
   return (
     <>
       <Navigation />
@@ -11,4 +11,4 @@ const App = () => {
   )
 }
 
-export default App
+export default Shop
