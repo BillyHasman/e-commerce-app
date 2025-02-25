@@ -4,6 +4,8 @@ import Jeans from '../../assets/img/jeans.jpg'
 import Shirts from '../../assets/img/shirts.jpg'
 import Tshirts from '../../assets/img/tshirts.jpeg'
 import Dresses from '../../assets/img/dresses.jpg'
+import Joggers from '../../assets/img/joggers.jpg'
+import Kurtis from '../../assets/img/kurtis.jpg'
 
 const items = [
   {
@@ -21,6 +23,14 @@ const items = [
   {
     title: 'Dresses',
     imagePath: Dresses,
+  },
+  {
+    title: 'Joggers',
+    imagePath: Joggers,
+  },
+  {
+    title: 'Kurtis',
+    imagePath: Kurtis,
   },
 ]
 
