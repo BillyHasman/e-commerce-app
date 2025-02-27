@@ -1,5 +1,16 @@
 import Card from '../Card/Card'
 import SectionHeading from './SectionHeading/SectionHeading'
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/navigation'
+
+// Import required modules
+import { Navigation } from 'swiper/modules'
+
 import Jeans from '../../assets/img/jeans.jpg'
 import Shirts from '../../assets/img/shirts.jpg'
 import Tshirts from '../../assets/img/tshirts.jpeg'
@@ -38,7 +49,35 @@ const NewArrivals = () => {
   return (
     <>
       <SectionHeading title={'New Arrivals'} />
-      <div className='flex flex-wrap'>{items && items?.map((item, index) => <Card key={item?.title + index} title={item.title} imagePath={item.imagePath} />)}</div>
+
+      {/* Swiper Carousel */}
+      <div className='mx-5 px-10'>
+        <Swiper
+          navigation={true} // Menambahkan navigasi (panah)
+          modules={[Navigation]} // Menambahkan modul Navigation
+          spaceBetween={30} // Menambah jarak antar slide
+          slidesPerView={3} // Mengatur jumlah slide yang tampil dalam 1 layar
+          loop={true} // Mengaktifkan fitur loop untuk carousel
+          breakpoints={{
+            640: {
+              slidesPerView: 1, // 1 card pada layar kecil
+            },
+            768: {
+              slidesPerView: 2, // 2 card pada layar medium
+            },
+            1024: {
+              slidesPerView: 4, // 3 card pada layar besar
+            },
+          }}
+          className='mySwiper'
+        >
+          {items?.map((item, index) => (
+            <SwiperSlide key={item.title + index} className='px-5'>
+              <Card className='' title={item.title} imagePath={item.imagePath} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </>
   )
 }
