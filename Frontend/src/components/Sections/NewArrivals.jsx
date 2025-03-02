@@ -1,5 +1,6 @@
-import Card from '../Card/Card'
+import React from 'react'
 import SectionHeading from './SectionHeading/SectionHeading'
+import Card from '../Card/Card'
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -11,6 +12,7 @@ import 'swiper/css/navigation'
 // Import required modules
 import { Navigation } from 'swiper/modules'
 
+// Image imports
 import Jeans from '../../assets/img/jeans.jpg'
 import Shirts from '../../assets/img/shirts.jpg'
 import Tshirts from '../../assets/img/tshirts.jpeg'
@@ -51,29 +53,35 @@ const NewArrivals = () => {
       <SectionHeading title={'New Arrivals'} />
 
       {/* Swiper Carousel */}
-      <div className='mx-5 px-10'>
+      <div className='mx-5 px-10 '>
         <Swiper
-          navigation={true} // Menambahkan navigasi (panah)
+          navigation={true}
           modules={[Navigation]} // Menambahkan modul Navigation
-          spaceBetween={30} // Menambah jarak antar slide
-          slidesPerView={3} // Mengatur jumlah slide yang tampil dalam 1 layar
-          loop={true} // Mengaktifkan fitur loop untuk carousel
+          spaceBetween={5} // Mengurangi jarak antar slide
+          loop={true} // Membuat carousel berputar
           breakpoints={{
-            640: {
-              slidesPerView: 1, // 1 card pada layar kecil
+            320: {
+              slidesPerView: 1, // 1 slide untuk layar 320px atau kurang
+              spaceBetween: 10,
+            },
+            480: {
+              slidesPerView: 2, // 2 slide untuk layar 480px atau lebih
+              spaceBetween: 10,
             },
             768: {
-              slidesPerView: 2, // 2 card pada layar medium
+              slidesPerView: 3, // 3 slide untuk layar 768px atau lebih
+              spaceBetween: 20,
             },
             1024: {
-              slidesPerView: 4, // 3 card pada layar besar
+              slidesPerView: 5, // 4 slide untuk layar 1024px atau lebih
+              spaceBetween: 20,
             },
           }}
-          className='mySwiper'
+          className='mySwiper '
         >
           {items?.map((item, index) => (
             <SwiperSlide key={item.title + index} className='px-5'>
-              <Card className='' title={item.title} imagePath={item.imagePath} />
+              <Card title={item.title} imagePath={item.imagePath} />
             </SwiperSlide>
           ))}
         </Swiper>

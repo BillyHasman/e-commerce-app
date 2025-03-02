@@ -1,16 +1,10 @@
-import PropTypes from 'prop-types'
-
 const SectionHeading = ({ title }) => {
   return (
-    <div className='flex flex-wrap px-10 my-5'>
-      <div></div>
-      <p className='text-3xl'>{title}</p>
+    <div className='flex flex-wrap px-10 my-5 items-center gap-2'>
+      <div className=' rounded  bg-black w-2 h-10'></div>
+      <p className='text-2xl'>{title}</p>
     </div>
   )
-}
-
-SectionHeading.propTypes = {
-  title: PropTypes.string.isRequired,
 }
 
 export default SectionHeading
